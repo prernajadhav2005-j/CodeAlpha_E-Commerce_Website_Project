@@ -1,0 +1,29 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block content %}
+
+<h2>Your Cart</h2>
+
+{% for item in cart_items %}
+<p>
+  {{ item.product.name }} – ₹{{ item.product.price }}
+
+  <!-- Quantity controls -->
+  <button onclick="updateQty({{ item.id }}, 'decrease')" class="btn btn-outline-secondary btn-sm">−</button>
+  <span>{{ item.quantity }}</span>
+  <button onclick="updateQty({{ item.id }}, 'increase')" class="btn btn-outline-secondary btn-sm">+</button>
+
+  <!-- Remove button -->
+  <a href="{% url 'remove_from_cart' item.id %}" class="btn btn-danger btn-sm">
+    Remove
+  </a>
+</p>
+{% endfor %}
+
+<h4>Total: ₹{{ total }}</h4>
+<a href="{% url 'checkout' %}" class="btn btn-success">Checkout</a>
+
+<!-- Cart JavaScript -->
+<script src="{% static 'store/cart.js' %}"></script>
+
+{% endblock %}

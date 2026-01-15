@@ -1,0 +1,91 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+  <div class="col-md-5">
+
+    <div class="card shadow-lg border-0 rounded-4">
+      <div class="card-body p-4">
+
+        <h3 class="text-center fw-bold mb-4">
+          Welcome Back
+        </h3>
+
+        <form method="post" novalidate>
+          {% csrf_token %}
+
+          <!-- USERNAME -->
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Username</label>
+            <div class="input-group">
+              <span class="input-group-text bg-white">
+                <i class="bi bi-person"></i>
+              </span>
+              {{ form.username }}
+            </div>
+          </div>
+
+          <!-- PASSWORD -->
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Password</label>
+            <div class="input-group">
+              <span class="input-group-text bg-white">
+                <i class="bi bi-lock"></i>
+              </span>
+
+              {{ form.password }}
+
+              <span class="input-group-text bg-white"
+                    style="cursor:pointer"
+                    onclick="togglePassword()">
+                <i id="eyeIcon" class="bi bi-eye"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- ERRORS -->
+          {% if form.errors %}
+            <div class="alert alert-danger small">
+              Invalid username or password
+            </div>
+          {% endif %}
+
+          <!-- LOGIN BUTTON -->
+          <button type="submit" class="btn btn-primary w-100 mt-3">
+            Login
+          </button>
+        </form>
+
+        <!-- REGISTER LINK -->
+        <div class="text-center mt-3">
+          <span class="text-muted">Don’t have an account?</span>
+          <a href="{% url 'register' %}" class="fw-semibold text-decoration-none">
+            Register
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SHOW / HIDE PASSWORD -->
+<script>
+function togglePassword() {
+  const passwordInput = document.getElementById("id_password");
+  const eyeIcon = document.getElementById("eyeIcon");
+
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    eyeIcon.classList.replace("bi-eye", "bi-eye-slash");
+  } else {
+    passwordInput.type = "password";
+    eyeIcon.classList.replace("bi-eye-slash", "bi-eye");
+  }
+}
+</script>
+
+{% endblock %}

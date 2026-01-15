@@ -1,0 +1,96 @@
+/* --------------------
+   GENERAL
+-------------------- */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* --------------------
+   NAVBAR
+-------------------- */
+.navbar {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --------------------
+   CATEGORY DROPDOWN
+-------------------- */
+select {
+    padding: 6px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* --------------------
+   PRODUCT CARDS
+-------------------- */
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 25px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* --------------------
+   CART PAGE
+-------------------- */
+.cart-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-total {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* --------------------
+   BUTTONS
+-------------------- */
+.btn {
+    border-radius: 20px;
+}
+
+.btn-danger {
+    padding: 4px 10px;
+}
+
+/* --------------------
+   QUANTITY CONTROLS
+-------------------- */
+.qty-btn {
+    padding: 3px 10px;
+    margin: 0 5px;
+}
+
+/* --------------------
+   FORMS
+-------------------- */
+form {
+    max-width: 400px;
+    margin: auto;
+}
+
+/* --------------------
+   ORDER SUCCESS
+-------------------- */
+.success-box {
+    background: #d4edda;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}

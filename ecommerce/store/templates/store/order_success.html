@@ -1,0 +1,12 @@
+{% extends 'store/base.html' %}
+{% block content %}
+
+<div class="alert alert-success">
+  <h4>✅ Order Placed Successfully!</h4>
+  <p>Your order has been created and is currently <b>Pending</b>.</p>
+</div>
+
+<a href="/" class="btn btn-primary">Continue Shopping</a>
+<a href="{% url 'orders' %}" class="btn btn-outline-dark">My Orders</a>
+
+{% endblock %}
