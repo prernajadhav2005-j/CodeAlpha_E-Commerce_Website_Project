@@ -20,17 +20,17 @@
 - Order Processing:-
   - Create order on checkout
   - Store order details:
-               - User
-               - Order date
-               - Total amount
-               - Order status
+    - User
+    - Order date
+    - Total amount
+    - Order status
   - View order history (My Orders)
 - UI / UX:-
-      - Responsive design using Bootstrap
-      - Attractive login & registration pages
-      - Icons inside input fields
-      - Show / hide password feature
-      - Consistent UI across all pages
+  - Responsive design using Bootstrap
+  - Attractive login & registration pages
+  - Icons inside input fields
+  - Show / hide password feature
+  - Consistent UI across all pages
   
 3. Technology Used:-
       - Frontend:
